@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Energym – Força que carrega.</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f5f5f4;--card:#fff;--ink:#111;--mut:#555;--lime:#dfee82;--limeH:#e2ff4f;--dark:#3c3a3b;--line:#e3e3df;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1c1d;--card:#2b292a;--ink:#f4f4f1;--mut:#b9b9b4;--line:#403e3f}}
+:root[data-theme="dark"]{--bg:#1d1c1d;--card:#2b292a;--ink:#f4f4f1;--mut:#b9b9b4;--line:#403e3f}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Jost,system-ui,sans-serif;line-height:1.5}
+h1,h2,h3,.logo{font-family:Italiana,Georgia,serif;font-weight:400;margin:0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:space-between;align-items:center;padding:10px 18px;background:var(--bg);border-bottom:1px solid var(--line)}
+.logo{font-size:26px;display:flex;align-items:center;gap:8px}
+.logo svg{width:28px;height:28px}
+.logo span{background:var(--lime);color:#111;padding:0 .2em;border-radius:4px}
+nav a.mini{font-size:14px;text-decoration:none;color:var(--ink);font-weight:500}
+section{max-width:880px;margin:auto;padding:44px 20px}
+.hero{padding-top:56px}
+.hero h1{font-size:clamp(52px,16vw,96px);line-height:1}
+.hero h1 span{background:var(--limeH);color:#111;padding:0 .12em;border-radius:6px}
+.slogan{font-family:Italiana,Georgia,serif;font-size:26px;margin:10px 0 16px}
+.hero p{color:var(--mut);max-width:520px;font-size:17px}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--limeH);color:#111;font:600 16px Jost,sans-serif;padding:14px 26px;border-radius:999px;text-decoration:none}
+.btn.dk{background:#111;color:var(--limeH)}
+h2{font-size:34px;margin-bottom:6px}
+h2 span{background:var(--lime);color:#111;padding:0 .2em;border-radius:4px}
+.sub{color:var(--mut);margin:0 0 22px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+.card b{display:block;font-size:17px;margin:6px 0 2px}
+.card p{margin:0;color:var(--mut);font-size:15px}
+.ic{font-size:26px}
+.step{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+.step i{font:normal 22px Italiana,serif;background:var(--lime);color:#111;min-width:38px;height:38px;border-radius:50%;display:grid;place-items:center}
+.step p{margin:0;color:var(--mut)}
+.demo{background:var(--dark);color:#f4f4f1;border-radius:26px;margin:0 12px;max-width:none}
+.demo .in{max-width:880px;margin:auto;padding:40px 8px}
+.demo h2 span{color:#111}
+.phone{max-width:340px;margin:20px auto 0;background:#f5f5f4;color:#111;border:8px solid #111;border-radius:34px;overflow:hidden}
+.tabs{display:flex;background:#fff;border-bottom:1px solid #e3e3df}
+.tabs button{flex:1;border:0;background:none;padding:12px 4px;font:500 14px Jost,sans-serif;color:#666;cursor:pointer;border-bottom:3px solid transparent}
+.tabs button.on{color:#111;border-color:#c5d82e;font-weight:600}
+.scr{padding:18px;min-height:360px;display:none}.scr.on{display:block}
+.scr h3{font-size:24px;margin-bottom:10px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.chips button{border:1px solid #ccc;background:#fff;color:#111;border-radius:999px;padding:6px 12px;font:500 13px Jost;cursor:pointer}
+.chips button.on{background:#dfee82;border-color:#c5d82e}
+.big{font:400 54px Italiana,serif;line-height:1}
+.big small{font:500 16px Jost}
+input[type=range]{width:100%;accent-color:#9bb000}
+.tip{background:#eef5b8;border-radius:12px;padding:10px 12px;font-size:14px;margin:12px 0}
+.bar{margin:12px 0}.bar div.t{display:flex;justify-content:space-between;font-size:14px;font-weight:500}
+.bar div.b{height:12px;background:#e3e3df;border-radius:9px;overflow:hidden;margin-top:4px}
+.bar div.b i{display:block;height:100%;width:0;background:#9bb000;border-radius:9px;transition:width .4s}
+.kpi{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #e3e3df}
+.kpi b{font-size:20px}
+.cta{text-align:center}
+.cta form{display:flex;flex-direction:column;gap:10px;max-width:340px;margin:18px auto 0}
+.cta input[type=text],.cta input[type=email]{padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:16px Jost,sans-serif}
+.ok{display:none;margin-top:16px;background:var(--lime);color:#111;border-radius:14px;padding:14px}
+footer{text-align:center;color:var(--mut);font-size:14px;padding:24px 20px 40px}
+body{background:radial-gradient(800px 480px at 90% -4%,rgba(226,255,79,.20),transparent 60%),radial-gradient(700px 500px at -15% 45%,rgba(223,238,130,.12),transparent 60%),var(--bg)}
+nav{backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 82%,transparent)}
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;right:-90px;top:20px;width:240px;height:240px;border:30px solid var(--limeH);border-radius:50%;opacity:.35;z-index:-1}
+.hero::after{content:"";position:absolute;right:30px;bottom:30px;width:46px;height:46px;background:var(--limeH);border-radius:50%;opacity:.8;z-index:-1}
+.card{position:relative;box-shadow:0 10px 26px rgba(0,0,0,.20);transition:transform .2s}
+.card:hover{transform:translateY(-3px)}
+.card::before{content:"";position:absolute;left:18px;top:0;width:38px;height:4px;background:var(--limeH);border-radius:0 0 4px 4px}
+.ic{width:50px;height:50px;border-radius:15px;background:var(--lime);display:grid;place-items:center;font-size:24px;margin-bottom:8px}
+section:nth-of-type(3){background:var(--card);border:1px solid var(--line);border-radius:26px;width:calc(100% - 24px);box-shadow:0 12px 32px rgba(0,0,0,.20);margin-top:14px;margin-bottom:14px}
+.demo{background:linear-gradient(160deg,#4d4a4b,#2c2a2b);box-shadow:0 22px 50px rgba(0,0,0,.35);position:relative;overflow:hidden}
+.demo::before{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:var(--limeH);opacity:.22}
+.demo .in{position:relative}
+.phone{box-shadow:0 26px 55px rgba(0,0,0,.55),0 0 0 2px #5a5758}
+.cta{background:var(--lime);color:#111;border-radius:26px;width:calc(100% - 24px);margin:14px auto;box-shadow:0 12px 32px rgba(0,0,0,.2)}
+.cta .sub{color:#2d2d2d}
+.cta h2 span{background:#111;color:var(--limeH)}
+.cta .btn{background:#111;color:var(--limeH)}
+.cta .ok{background:#111;color:var(--limeH)}
+</style>
+</head>
+<body>
+<nav>
+ <div class="logo"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#111"/><path d="M18 4 8 18h7l-2 10 11-15h-7z" fill="#e2ff4f"/></svg><span>Energym</span></div>
+ <a class="mini" href="#demo">Ver demo</a>
+</nav>
+
+<section class="hero">
+ <h1><span>Energym</span></h1>
+ <div class="slogan">“Força que carrega.”</div>
+ <p>Aparelhos de academia inteligentes que transformam o esforço do seu treino em eletricidade para carregar celular, relógio e fones. Tecnologia, sustentabilidade e saúde em um só equipamento.</p>
+ <p style="margin-top:22px"><a class="btn" href="#demo">Ver como funciona</a></p>
+</section>
+
+<section>
+ <h2><span>Benefícios</span></h2>
+ <p class="sub">Como a solução ajuda quem treina e quem administra a academia.</p>
+ <div class="grid">
+  <div class="card"><div class="ic">🔋</div><b>Celular sempre carregado</b><p>Treine ouvindo música e acompanhando o desempenho sem medo da bateria acabar.</p></div>
+  <div class="card"><div class="ic">🌱</div><b>Energia limpa</b><p>O exercício vira fonte de energia sustentável e útil.</p></div>
+  <div class="card"><div class="ic">💡</div><b>Economia para academias</b><p>Menos consumo de energia elétrica e uma experiência melhor para os alunos.</p></div>
+  <div class="card"><div class="ic">💪</div><b>Mais motivação</b><p>Ver a energia gerada incentiva a prática de exercícios físicos.</p></div>
+ </div>
+</section>
+
+<section>
+ <h2><span>Como funciona</span></h2>
+ <p class="sub">Três passos simples.</p>
+ <div class="step"><i>1</i><div><b>Treine no aparelho Energym</b><p>Bike, esteira ou remo: o movimento gera energia.</p></div></div>
+ <div class="step"><i>2</i><div><b>A IA otimiza a geração</b><p>Ela monitora o desempenho e o gasto energético em tempo real.</p></div></div>
+ <div class="step" style="border:0"><i>3</i><div><b>Seus dispositivos carregam</b><p>Conecte o celular, o relógio ou o fone e acompanhe a carga no app.</p></div></div>
+</section>
+
+<section class="demo" id="demo"><div class="in">
+ <h2><span>Funcionalidade principal</span></h2>
+ <p class="sub" style="color:#cfcfca">Teste o app: escolha um aparelho, aumente o ritmo e veja seus dispositivos carregando. (Simulação acelerada.)</p>
+ <div class="phone">
+  <div class="tabs"><button class="on" data-t="0">Treino</button><button data-t="1">Carga</button><button data-t="2">Impacto</button></div>
+  <div class="scr on" id="s0">
+   <h3>Novo treino</h3>
+   <div class="chips" id="eq"><button class="on">🚴 Bike</button><button>🏃 Esteira</button><button>🚣 Remo</button></div>
+   <div class="big"><span id="w">0</span> <small>watts</small></div>
+   <p style="margin:4px 0 8px;font-size:14px;color:#555">Ritmo do treino</p>
+   <input type="range" id="rt" min="0" max="100" value="50">
+   <div class="tip" id="tip">🤖 Toque em “Iniciar” para começar a gerar energia.</div>
+   <button class="btn dk" id="go" style="width:100%">Iniciar treino</button>
+  </div>
+  <div class="scr" id="s1">
+   <h3>Carregando</h3>
+   <div class="bar"><div class="t"><span>🎧 Fones</span><span id="p0">20%</span></div><div class="b"><i id="b0"></i></div></div>
+   <div class="bar"><div class="t"><span>⌚ Relógio</span><span id="p1">35%</span></div><div class="b"><i id="b1"></i></div></div>
+   <div class="bar"><div class="t"><span>📱 Celular</span><span id="p2">12%</span></div><div class="b"><i id="b2"></i></div></div>
+   <p style="font-size:13px;color:#666">Inicie um treino na aba “Treino” e volte aqui para ver a carga subir.</p>
+  </div>
+  <div class="scr" id="s2">
+   <h3>Seu impacto</h3>
+   <div class="kpi"><span>Energia gerada</span><b id="k0">0,00 Wh</b></div>
+   <div class="kpi"><span>Tempo de treino</span><b id="k1">0 min</b></div>
+   <div class="kpi"><span>CO₂ evitado (estimativa)</span><b id="k2">0,0 g</b></div>
+   <p style="font-size:13px;color:#666">Valores ilustrativos do protótipo.</p>
+  </div>
+ </div>
+</div></section>
+
+<section class="cta" id="cta">
+ <h2><span>Experimente a Energym</span></h2>
+ <p class="sub">Quer levar a Energym para a sua academia? Deixe seu contato.</p>
+ <form id="f"><input type="text" placeholder="Seu nome" required><input type="email" placeholder="Seu e-mail" required><button class="btn" type="submit">Quero experimentar</button></form>
+ <div class="ok" id="ok">⚡ Obrigado! Entraremos em contato em breve. (Protótipo: nenhum dado foi enviado.)</div>
+</section>
+
+<footer>Energym · “Transformando esforço em energia.”<br>energym.propostainteligente@gmail.com</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));
+ document.querySelectorAll('.scr').forEach((s,i)=>s.classList.toggle('on',i==b.dataset.t));
+});
+document.querySelectorAll('#eq button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#eq button').forEach(x=>x.classList.toggle('on',x===b))});
+const dev=[{c:0.6,l:20},{c:1.2,l:35},{c:15,l:12}]; // capacidade Wh, nível %
+let on=false,timer=null,E=0,sec=0;
+function paint(){dev.forEach((d,i)=>{$('p'+i).textContent=Math.round(d.l)+'%';$('b'+i).style.width=d.l+'%'});
+ $('k0').textContent=E.toFixed(2).replace('.',',')+' Wh';$('k1').textContent=Math.floor(sec/60)+' min';$('k2').textContent=(E*0.08).toFixed(2).replace('.',',')+' g'}
+function watts(){return Math.round(+$('rt').value*1.6)}
+function tip(){const w=watts();$('tip').textContent=w<40?'🤖 Ritmo baixo: aumente um pouco para gerar mais energia.':w<110?'🤖 Ótimo! Mantenha esse ritmo constante.':'🤖 Alta geração! Cuide da respiração e hidrate-se.'}
+$('rt').oninput=()=>{$('w').textContent=on?watts():0;if(on)tip()};
+$('go').onclick=()=>{
+ on=!on;$('go').textContent=on?'Parar treino':'Iniciar treino';
+ if(on){$('w').textContent=watts();tip();timer=setInterval(()=>{
+   const e=watts()*2.5/3600;E+=e;sec+=2.5;let r=e;
+   for(const d of dev){if(d.l<100&&r>0){const need=(100-d.l)/100*d.c,u=Math.min(need,r);d.l+=u/d.c*100;r-=u}}
+   paint()},500)}
+ else{clearInterval(timer);$('w').textContent=0;$('tip').textContent='🤖 Treino pausado. Veja sua carga na aba “Carga”.'}
+};
+paint();
+$('f').onsubmit=e=>{e.preventDefault();$('ok').style.display='block';$('f').style.display='none'};
+</script>
+</body>
+</html>
